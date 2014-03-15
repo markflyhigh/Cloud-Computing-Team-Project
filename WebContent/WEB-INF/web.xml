@@ -1,0 +1,74 @@
+<web-app xmlns="http://java.sun.com/xml/ns/javaee"
+         xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+         version="2.5">
+
+    <display-name>ToDoList via JSP Model 2</display-name>
+    <description>
+      JSP Model 2 ToDoList
+    </description>
+
+    <context-param>
+        <param-name>  jdbcDriverName          </param-name>
+        <param-value> com.mysql.jdbc.Driver   </param-value>
+    </context-param>
+
+    <context-param>
+        <param-name>  jdbcURL                 </param-name>
+        <param-value> jdbc:mysql:///test  </param-value>
+    </context-param>
+
+    <servlet>
+        <servlet-name>  delete-servlet       </servlet-name>
+        <servlet-class>
+        	edu.cmu.cs.webapp.todolist6.Delete
+        </servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>  login-servlet       </servlet-name>
+        <servlet-class>
+        	edu.cmu.cs.webapp.todolist6.Login
+        </servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>  logout-servlet       </servlet-name>
+        <servlet-class>
+        	edu.cmu.cs.webapp.todolist6.Logout
+        </servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>  todolist-servlet       </servlet-name>
+        <servlet-class>
+        	edu.cmu.cs.webapp.todolist6.ToDoList
+        </servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>  delete-servlet        </servlet-name>
+        <url-pattern>   /Delete   </url-pattern>
+    </servlet-mapping>
+    
+    <servlet-mapping>
+        <servlet-name>  login-servlet        </servlet-name>
+        <url-pattern>   /Login   </url-pattern>
+    </servlet-mapping>
+    
+    <servlet-mapping>
+        <servlet-name>  logout-servlet        </servlet-name>
+        <url-pattern>   /Logout   </url-pattern>
+    </servlet-mapping>
+    
+    <servlet-mapping>
+        <servlet-name>  todolist-servlet        </servlet-name>
+        <url-pattern>   /ToDoList   </url-pattern>
+    </servlet-mapping>
+
+    <welcome-file-list>
+        <welcome-file>   Login   </welcome-file>
+    </welcome-file-list>
+
+</web-app>
